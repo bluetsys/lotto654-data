@@ -14,13 +14,7 @@ namespace Lotto645Console
             var _Body = new System.Net.WebClient()
             {
                 Encoding = System.Text.Encoding.GetEncoding(51949),
-                Headers = new System.Net.WebHeaderCollection
-         {
-             "Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,und;q=0.6,la;q=0.5"
-         }
             }.DownloadString("https://dhlottery.co.kr/gameResult.do?method=allWinExel&nowPage=96&drwNoStart=1&drwNoEnd=2000");
-
-            // 딱 1시간만에 완료
 
             // robots.txt 확인
             //new System.Net.WebClient()
@@ -76,9 +70,9 @@ namespace Lotto645Console
                               당첨자수1 = int.Parse(row.Field<string>(2).Replace(".", "")),
                               당첨금1 = long.Parse(row.Field<object>(3).ToString().Replace("원", "").Replace(",", "")),
                               당첨자수2 = int.Parse(row.Field<string>(4).Replace(",", "")),
-                            당첨금2 = long.Parse(row.Field<string>(5).Replace("원", "").Replace(",", "")),
+                              당첨금2 = long.Parse(row.Field<string>(5).Replace("원", "").Replace(",", "")),
                               당첨자수3 = int.Parse(row.Field<string>(6).Replace(",", "")),
-                                당첨금3 = long.Parse(row.Field<string>(7).Replace("원", "").Replace(",", "")),
+                              당첨금3 = long.Parse(row.Field<string>(7).Replace("원", "").Replace(",", "")),
                               당첨자수4 = int.Parse(row.Field<string>(8).Replace(",", "")),
                               당첨금4 = long.Parse(row.Field<string>(9).Replace("원", "").Replace(",", "")),
                               당첨자수5 = int.Parse(row.Field<string>(10).Replace(",", "")),
